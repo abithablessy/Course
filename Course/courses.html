@@ -19,7 +19,22 @@
          <div class="row">
             <!--sidebar start-->
             <div class="col-md-3 sidebar">
-            test
+               <!--searchbar start-->
+               <h5>Search for keywords</h5>
+               <div id="coursesearch">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <input class="form-control form-control-sm ml-3 w-75 customsearch" type="text" placeholder="Filter courses"
+                     aria-label="Search" id="searchdata">
+               </div>
+               <!--searchbar end-->
+               <!--category start-->
+               <div id="categorylist">
+                  <h5>Category</h5>
+                  <!--start bind category items from api-->
+                  <div id="categorylistbind"></div>
+                  <!--end bind category items from api-->
+               </div>
+               <!--category end-->
             </div>
             <!--sidebar end-->
             <!--start content area-->
@@ -34,7 +49,6 @@
       </div>
       <!--container end-->
       <script type="text/javascript" src="js/library/jquery.min.js"></script>
-      <!--<script type="text/javascript" src="js/library/jquery.ajax-cross-origin.min.js"></script>-->
       <script type="text/javascript" src="js/custom.js"></script>
    </body>
 </html>

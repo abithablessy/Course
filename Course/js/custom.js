@@ -1,25 +1,16 @@
 $(document).ready(function () {
-	debugger;
-	/*$.ajax({
-		  crossOrigin: true,
-		  url: "https://frontend-hiring.appspot.com/all_courses?secret=HelloMars",
-		  //dataType: "json", //no need. if you use crossOrigin, the dataType will be override with "json"
-		  //charset: 'ISO-8859-1', //use it to define the charset of the target url
-		  context: {},
-		  success: function(data) {
-			  alert(data);
-			  console.log(JSON.parse(data));
-			  var obj =JSON.parse(data);
-			  var categoryobj =JSON.parse(obj.payload);
-			  console.log(categoryobj);
-			  alert(obj.payload);
-			  alert(categoryobj[0].category);
-			  //$( '#test' ).html(data);
-			}
-		}).done(function( data, textStatus, jqXHR ) {
-			//alert(data);
-		});*/
-
+	var catdata = {
+		"status": 200,
+		"message": "OK",
+		"payload": "[\"Mathematics\", \"Engineering\", \"Computer\"]"
+	};
+	var catlistobj = JSON.parse(JSON.stringify(catdata));
+	var categorylist = JSON.parse(catlistobj.payload);
+	var bindcat = '<input type="radio" id="all" name="category" value="all" checked><label for="all">All</label><br>';
+	for (i = 0; i < categorylist.length; i++) {
+		bindcat += '<input type="radio" id="' + categorylist[i] + '" name="category" value="' + categorylist[i] + '"><label for="' + categorylist[i] + '">' + categorylist[i] + '</label><br>';
+	}
+	$("#categorylistbind").html(bindcat);
 	var data = {
 		"status": 200,
 		"message": "OK",
@@ -58,6 +49,22 @@ $(document).ready(function () {
 	}
 	$("#coursedata").html(binddata);
 
+	$('input[type="radio"]').click(function () {
+		var inputValue = $(this).attr("value");
+		var targetBox = $("." + inputValue);
+		$(".box").not(targetBox).hide();
+		$(targetBox).show();
+	});
+	$("#searchdata").on("keyup", function () {
+
+		var query = $.trim($(this).val()).toLowerCase();
+		$('div.card').each(function () {
+			var $this = $(this);
+			if ($this.text().toLowerCase().indexOf(query) === -1)
+				$this.closest('div.card').hide();
+			else $this.closest('div.card').show();
+		});
+	});
 
 	function getweeks(d1, d2) {
 		return Math.round((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
