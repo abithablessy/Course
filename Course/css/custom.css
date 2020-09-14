@@ -1,0 +1,76 @@
+/*****start custom css*****/
+
+body {
+	overflow-x: hidden;
+}
+
+header {
+	text-align: center;
+	padding: 30px 0px;
+	font-size: 2em;
+	font-weight: bold;
+	background-color: #A9A9A9;
+	color: #000;
+}
+
+
+
+/*end common css*/
+
+#container {
+	margin: 20px 0px;
+}
+
+.margintop20 {
+	margin-top: 20px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.card {
+	margin-top: 10px;
+}
+
+.imiddle {
+	margin: 0;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.divmiddle {
+	display: table;
+	margin-top: 5px;
+}
+
+
+/*end common css*/
+
+
+/*start circle css*/
+
+.dot {
+	height: 50px;
+	width: 50px;
+	background-color: #00BFFF;
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+/*end circle css*/
+
+.prereg p {
+	margin-bottom: 0.1rem;
+}
+
+#coursedata {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/***** end custom css*****/
